@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class UsedCarsViewModel {
     
@@ -15,6 +16,7 @@ class UsedCarsViewModel {
     
     @Published var listings: [UsedCar]? = nil
     @Published var error: Error? = nil
+    @Published var carImages: [String: UIImage] = [:]
     
     init(service: UsedCarServiceProtocol, imageLoader: ImageLoader) {
         usedCarsService = service
@@ -33,8 +35,14 @@ class UsedCarsViewModel {
     }
     
     func getCarImage(for car: UsedCar) {
-        imageLoader.loadImage(from: car.images.medium.first ?? "") { [weak self] result in
-            
+        let url = car.images.large.first ?? ""
+        imageLoader.loadImage(from: url) { [weak self] result in
+            switch result {
+            case .success(let image):
+                self?.carImages[url] = image
+            case .failure(let error):
+                debugPrint("Error in downloadin image", error)
+            }
         }
     }
     

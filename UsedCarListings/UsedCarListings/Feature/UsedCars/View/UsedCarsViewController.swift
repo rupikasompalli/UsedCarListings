@@ -14,7 +14,7 @@ class UsedCarsViewController: UIViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "UsedCarCell", bundle: nil), forCellReuseIdentifier: "UsedCarCell")
+        tableView.register(UINib(nibName: "UsedCarCell", bundle: .main), forCellReuseIdentifier: "UsedCarCell")
         return tableView
     }()
     
@@ -51,12 +51,22 @@ class UsedCarsViewController: UIViewController {
             .$listings
             .sink { [weak self] _ in
                 self?.refreshView()
-        }
+            }
+        .store(in: &cancellables)
+        
+        viewModel
+            .$carImages
+            .sink { [weak self] _ in
+                self?.refreshView()
+            }
         .store(in: &cancellables)
     }
     
     private func refreshView() {
-        usedCarsListView.reloadData()
+        DispatchQueue.main.async {
+            self.usedCarsListView.reloadData()
+        }
+    
     }
     
     
@@ -68,16 +78,22 @@ extension UsedCarsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let carCell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as? UsedCarCell
+        let carCell = tableView.dequeueReusableCell(withIdentifier: "UsedCarCell", for: indexPath) as? UsedCarCell
         guard let carCell = carCell,
               let car = viewModel.listings?[indexPath.row] else {
             return UITableViewCell()
         }
         carCell.showData(car: car)
+        if let carImage = viewModel.carImages[car.images.large.first ?? ""] {
+            carCell.loadCarImage(image: carImage)
+        } else {
+            viewModel.getCarImage(for: car)
+        }
+        
         return carCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        220
+        320
     }
 }

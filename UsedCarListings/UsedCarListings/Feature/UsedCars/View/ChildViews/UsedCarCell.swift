@@ -29,7 +29,18 @@ class UsedCarCell: UITableViewCell {
     }
     
     func showData(car: UsedCar) {
-        ymmLabel.text = "\(car.year) \(car.make) \(car.model)"
-        trimLabel.text = 
+        DispatchQueue.main.async { [weak self] in
+            self?.ymmLabel.text = "\(car.year) \(car.make) \(car.model)"
+            self?.trimLabel.text = car.trim
+            self?.priceLabel.text = "\(car.listPrice)"
+            self?.mileageLabel.text = "\(car.mileage)"
+            self?.addressLabel.text = car.dealer.address
+        }
+    }
+    
+    func loadCarImage(image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.carImageView.image = image
+        }
     }
 }

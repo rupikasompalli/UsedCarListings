@@ -15,5 +15,6 @@ struct UsedCar: Codable {
     var trim: String
     var listPrice: Double
     var currentPrice: Double
+    var mileage: Double
     var dealer: Dealer
 }

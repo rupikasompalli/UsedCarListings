@@ -195,6 +195,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="Hty-Q9-mjJ" id="Qzg-18-eGh"/>
+                <outlet property="callButton" destination="6FF-5v-3vN" id="4XG-HR-kei"/>
+                <outlet property="carImageView" destination="zXP-7z-lgc" id="dqT-1W-jO0"/>
+                <outlet property="mileageLabel" destination="Yl3-4q-o5u" id="LWv-uo-YNh"/>
+                <outlet property="priceLabel" destination="1hu-MM-mMC" id="cgv-lB-eFW"/>
+                <outlet property="trimLabel" destination="X13-Rq-WgN" id="evh-QO-df6"/>
+                <outlet property="ymmLabel" destination="wvu-Mw-WJI" id="GV5-nb-2WN"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="244.08482142857142"/>
         </tableViewCell>
     </objects>
