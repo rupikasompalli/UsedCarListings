@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3720D5A3279B51FE00D6EAD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5A2279B51FE00D6EAD6 /* AppDelegate.swift */; };
 		3720D5A5279B51FE00D6EAD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5A4279B51FE00D6EAD6 /* SceneDelegate.swift */; };
-		3720D5A7279B51FE00D6EAD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5A6279B51FE00D6EAD6 /* ViewController.swift */; };
-		3720D5AA279B51FE00D6EAD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5A8279B51FE00D6EAD6 /* Main.storyboard */; };
 		3720D5AC279B51FF00D6EAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5AB279B51FF00D6EAD6 /* Assets.xcassets */; };
 		3720D5AF279B51FF00D6EAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5AD279B51FF00D6EAD6 /* LaunchScreen.storyboard */; };
 		3720D5BA279B520000D6EAD6 /* UsedCarListingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5B9279B520000D6EAD6 /* UsedCarListingsTests.swift */; };
@@ -22,6 +20,12 @@
 		3720D5DB279B589A00D6EAD6 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5DA279B589A00D6EAD6 /* Dealer.swift */; };
 		3720D5DD279B5EA900D6EAD6 /* UsedCarListings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5DC279B5EA900D6EAD6 /* UsedCarListings.swift */; };
 		3720D5DF279B605E00D6EAD6 /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5DE279B605E00D6EAD6 /* ImageLoaderService.swift */; };
+		3720D5E1279B661800D6EAD6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5E0279B661800D6EAD6 /* AppEnvironment.swift */; };
+		3720D5E8279B67E900D6EAD6 /* UsedCarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5E7279B67E900D6EAD6 /* UsedCarsViewModel.swift */; };
+		3720D5EA279B681F00D6EAD6 /* UsedCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5E9279B681F00D6EAD6 /* UsedCarsViewController.swift */; };
+		3720D5EF279B685B00D6EAD6 /* UsedCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5ED279B685B00D6EAD6 /* UsedCarCell.swift */; };
+		3720D5F0279B685B00D6EAD6 /* UsedCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5EE279B685B00D6EAD6 /* UsedCarCell.xib */; };
+		3720D5F3279B6D7400D6EAD6 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5F2279B6D7400D6EAD6 /* ShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +49,6 @@
 		3720D59F279B51FE00D6EAD6 /* UsedCarListings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsedCarListings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3720D5A2279B51FE00D6EAD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3720D5A4279B51FE00D6EAD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3720D5A6279B51FE00D6EAD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3720D5A9279B51FE00D6EAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3720D5AB279B51FF00D6EAD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3720D5AE279B51FF00D6EAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3720D5B0279B51FF00D6EAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +63,12 @@
 		3720D5DA279B589A00D6EAD6 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		3720D5DC279B5EA900D6EAD6 /* UsedCarListings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarListings.swift; sourceTree = "<group>"; };
 		3720D5DE279B605E00D6EAD6 /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
+		3720D5E0279B661800D6EAD6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		3720D5E7279B67E900D6EAD6 /* UsedCarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarsViewModel.swift; sourceTree = "<group>"; };
+		3720D5E9279B681F00D6EAD6 /* UsedCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarsViewController.swift; sourceTree = "<group>"; };
+		3720D5ED279B685B00D6EAD6 /* UsedCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarCell.swift; sourceTree = "<group>"; };
+		3720D5EE279B685B00D6EAD6 /* UsedCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsedCarCell.xib; sourceTree = "<group>"; };
+		3720D5F2279B6D7400D6EAD6 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +119,12 @@
 		3720D5A1279B51FE00D6EAD6 /* UsedCarListings */ = {
 			isa = PBXGroup;
 			children = (
+				3720D5E3279B679E00D6EAD6 /* Feature */,
+				3720D5E2279B661D00D6EAD6 /* Environment */,
 				3720D5D5279B53C100D6EAD6 /* Models */,
 				3720D5D2279B537700D6EAD6 /* Services */,
 				3720D5A2279B51FE00D6EAD6 /* AppDelegate.swift */,
 				3720D5A4279B51FE00D6EAD6 /* SceneDelegate.swift */,
-				3720D5A6279B51FE00D6EAD6 /* ViewController.swift */,
-				3720D5A8279B51FE00D6EAD6 /* Main.storyboard */,
 				3720D5AB279B51FF00D6EAD6 /* Assets.xcassets */,
 				3720D5AD279B51FF00D6EAD6 /* LaunchScreen.storyboard */,
 				3720D5B0279B51FF00D6EAD6 /* Info.plist */,
@@ -159,6 +167,58 @@
 				3720D5DC279B5EA900D6EAD6 /* UsedCarListings.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3720D5E2279B661D00D6EAD6 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5E0279B661800D6EAD6 /* AppEnvironment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		3720D5E3279B679E00D6EAD6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5E4279B67A900D6EAD6 /* UsedCars */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		3720D5E4279B67A900D6EAD6 /* UsedCars */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5EB279B682C00D6EAD6 /* View */,
+				3720D5EC279B683500D6EAD6 /* ViewModel */,
+			);
+			path = UsedCars;
+			sourceTree = "<group>";
+		};
+		3720D5EB279B682C00D6EAD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5E9279B681F00D6EAD6 /* UsedCarsViewController.swift */,
+				3720D5F1279B686000D6EAD6 /* ChildViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3720D5EC279B683500D6EAD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5E7279B67E900D6EAD6 /* UsedCarsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3720D5F1279B686000D6EAD6 /* ChildViews */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5ED279B685B00D6EAD6 /* UsedCarCell.swift */,
+				3720D5EE279B685B00D6EAD6 /* UsedCarCell.xib */,
+				3720D5F2279B6D7400D6EAD6 /* ShadowView.swift */,
+			);
+			path = ChildViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +327,7 @@
 			files = (
 				3720D5AF279B51FF00D6EAD6 /* LaunchScreen.storyboard in Resources */,
 				3720D5AC279B51FF00D6EAD6 /* Assets.xcassets in Resources */,
-				3720D5AA279B51FE00D6EAD6 /* Main.storyboard in Resources */,
+				3720D5F0279B685B00D6EAD6 /* UsedCarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,10 +353,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3720D5DF279B605E00D6EAD6 /* ImageLoaderService.swift in Sources */,
-				3720D5A7279B51FE00D6EAD6 /* ViewController.swift in Sources */,
 				3720D5A3279B51FE00D6EAD6 /* AppDelegate.swift in Sources */,
 				3720D5DB279B589A00D6EAD6 /* Dealer.swift in Sources */,
+				3720D5EA279B681F00D6EAD6 /* UsedCarsViewController.swift in Sources */,
+				3720D5E8279B67E900D6EAD6 /* UsedCarsViewModel.swift in Sources */,
+				3720D5F3279B6D7400D6EAD6 /* ShadowView.swift in Sources */,
+				3720D5EF279B685B00D6EAD6 /* UsedCarCell.swift in Sources */,
 				3720D5A5279B51FE00D6EAD6 /* SceneDelegate.swift in Sources */,
+				3720D5E1279B661800D6EAD6 /* AppEnvironment.swift in Sources */,
 				3720D5DD279B5EA900D6EAD6 /* UsedCarListings.swift in Sources */,
 				3720D5D9279B588200D6EAD6 /* UsedCarImages.swift in Sources */,
 				3720D5D4279B539D00D6EAD6 /* UsedCarService.swift in Sources */,
@@ -337,14 +401,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3720D5A8279B51FE00D6EAD6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3720D5A9279B51FE00D6EAD6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3720D5AD279B51FF00D6EAD6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -484,7 +540,6 @@
 				INFOPLIST_FILE = UsedCarListings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,7 +567,6 @@
 				INFOPLIST_FILE = UsedCarListings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
