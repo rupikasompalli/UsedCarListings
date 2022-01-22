@@ -172,6 +172,9 @@
                                                                 <rect key="frame" x="10" y="10" width="72.5" height="15"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="phone" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="callDealer" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lkW-x6-rIf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

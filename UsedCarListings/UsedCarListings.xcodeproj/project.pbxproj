@@ -26,6 +26,10 @@
 		3720D5EF279B685B00D6EAD6 /* UsedCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5ED279B685B00D6EAD6 /* UsedCarCell.swift */; };
 		3720D5F0279B685B00D6EAD6 /* UsedCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5EE279B685B00D6EAD6 /* UsedCarCell.xib */; };
 		3720D5F3279B6D7400D6EAD6 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5F2279B6D7400D6EAD6 /* ShadowView.swift */; };
+		3720D5F6279BB0FD00D6EAD6 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5F5279BB0FD00D6EAD6 /* Double+Extension.swift */; };
+		3720D5F9279BB38F00D6EAD6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5F8279BB38F00D6EAD6 /* FilterViewController.swift */; };
+		3720D5FB279BB3A000D6EAD6 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5FA279BB3A000D6EAD6 /* FilterViewModel.swift */; };
+		3720D5FD279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5FC279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		3720D5ED279B685B00D6EAD6 /* UsedCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarCell.swift; sourceTree = "<group>"; };
 		3720D5EE279B685B00D6EAD6 /* UsedCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsedCarCell.xib; sourceTree = "<group>"; };
 		3720D5F2279B6D7400D6EAD6 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		3720D5F5279BB0FD00D6EAD6 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		3720D5F8279BB38F00D6EAD6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		3720D5FA279BB3A000D6EAD6 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		3720D5FC279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,15 +127,13 @@
 		3720D5A1279B51FE00D6EAD6 /* UsedCarListings */ = {
 			isa = PBXGroup;
 			children = (
-				3720D5E3279B679E00D6EAD6 /* Feature */,
 				3720D5E2279B661D00D6EAD6 /* Environment */,
+				3720D5F4279BB0E600D6EAD6 /* Extensions */,
+				3720D5E3279B679E00D6EAD6 /* Feature */,
 				3720D5D5279B53C100D6EAD6 /* Models */,
 				3720D5D2279B537700D6EAD6 /* Services */,
-				3720D5A2279B51FE00D6EAD6 /* AppDelegate.swift */,
-				3720D5A4279B51FE00D6EAD6 /* SceneDelegate.swift */,
-				3720D5AB279B51FF00D6EAD6 /* Assets.xcassets */,
-				3720D5AD279B51FF00D6EAD6 /* LaunchScreen.storyboard */,
-				3720D5B0279B51FF00D6EAD6 /* Info.plist */,
+				3720D600279BBC8200D6EAD6 /* Delegates */,
+				3720D602279BBC9E00D6EAD6 /* Resources */,
 			);
 			path = UsedCarListings;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 		3720D5E3279B679E00D6EAD6 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				3720D5F7279BB36F00D6EAD6 /* Settings */,
 				3720D5E4279B67A900D6EAD6 /* UsedCars */,
 			);
 			path = Feature;
@@ -219,6 +226,59 @@
 				3720D5F2279B6D7400D6EAD6 /* ShadowView.swift */,
 			);
 			path = ChildViews;
+			sourceTree = "<group>";
+		};
+		3720D5F4279BB0E600D6EAD6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5F5279BB0FD00D6EAD6 /* Double+Extension.swift */,
+				3720D5FC279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3720D5F7279BB36F00D6EAD6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5FE279BBC3000D6EAD6 /* View */,
+				3720D5FF279BBC3700D6EAD6 /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3720D5FE279BBC3000D6EAD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5F8279BB38F00D6EAD6 /* FilterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3720D5FF279BBC3700D6EAD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5FA279BB3A000D6EAD6 /* FilterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3720D600279BBC8200D6EAD6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5A2279B51FE00D6EAD6 /* AppDelegate.swift */,
+				3720D5A4279B51FE00D6EAD6 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		3720D602279BBC9E00D6EAD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3720D5AB279B51FF00D6EAD6 /* Assets.xcassets */,
+				3720D5AD279B51FF00D6EAD6 /* LaunchScreen.storyboard */,
+				3720D5B0279B51FF00D6EAD6 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,17 +414,21 @@
 			files = (
 				3720D5DF279B605E00D6EAD6 /* ImageLoaderService.swift in Sources */,
 				3720D5A3279B51FE00D6EAD6 /* AppDelegate.swift in Sources */,
+				3720D5FB279BB3A000D6EAD6 /* FilterViewModel.swift in Sources */,
+				3720D5F6279BB0FD00D6EAD6 /* Double+Extension.swift in Sources */,
 				3720D5DB279B589A00D6EAD6 /* Dealer.swift in Sources */,
 				3720D5EA279B681F00D6EAD6 /* UsedCarsViewController.swift in Sources */,
 				3720D5E8279B67E900D6EAD6 /* UsedCarsViewModel.swift in Sources */,
 				3720D5F3279B6D7400D6EAD6 /* ShadowView.swift in Sources */,
 				3720D5EF279B685B00D6EAD6 /* UsedCarCell.swift in Sources */,
 				3720D5A5279B51FE00D6EAD6 /* SceneDelegate.swift in Sources */,
+				3720D5F9279BB38F00D6EAD6 /* FilterViewController.swift in Sources */,
 				3720D5E1279B661800D6EAD6 /* AppEnvironment.swift in Sources */,
 				3720D5DD279B5EA900D6EAD6 /* UsedCarListings.swift in Sources */,
 				3720D5D9279B588200D6EAD6 /* UsedCarImages.swift in Sources */,
 				3720D5D4279B539D00D6EAD6 /* UsedCarService.swift in Sources */,
 				3720D5D7279B53D500D6EAD6 /* UsedCar.swift in Sources */,
+				3720D5FD279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

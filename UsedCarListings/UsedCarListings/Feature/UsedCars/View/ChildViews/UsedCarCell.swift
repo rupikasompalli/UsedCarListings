@@ -11,7 +11,6 @@ class UsedCarCell: UITableViewCell {
     
     static let Identifier = "UsedCarCell"
     
-    
     @IBOutlet weak var ymmLabel: UILabel!
     @IBOutlet weak var trimLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -20,6 +19,8 @@ class UsedCarCell: UITableViewCell {
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var carImageView: UIImageView!
     @IBOutlet weak var contentHolder: UIView!
+    
+    var usedCar: UsedCar?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +33,11 @@ class UsedCarCell: UITableViewCell {
     }
     
     func showData(car: UsedCar) {
+        self.usedCar = car
         DispatchQueue.main.async { [weak self] in
             self?.ymmLabel.text = "\(car.year) \(car.make) \(car.model)"
             self?.trimLabel.text = car.trim
-            self?.priceLabel.text = "\(car.listPrice)"
+            self?.priceLabel.text = car.listPrice.asLocaleCurrency
             self?.mileageLabel.text = "\(car.mileage)"
             self?.addressLabel.text = car.dealer.address
         }
@@ -49,6 +51,17 @@ class UsedCarCell: UITableViewCell {
             } else {
                 self?.carImageView.image = image
             }
+        }
+    }
+    
+    @IBAction func callDealer() {
+        guard let car = usedCar else {
+            return
+        }
+        if let url = URL(string: "tel://\(car.dealer.phone)"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            debugPrint("Cannot make a phone call")
         }
     }
 }

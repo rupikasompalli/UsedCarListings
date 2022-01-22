@@ -34,4 +34,10 @@ extension AppEnvironment: AppFactory {
         let view = UsedCarsViewController(viewModel: vm)
         return view
     }
+    
+    func makeFilterListView() -> FilterViewController {
+        let vm = FilterViewModel()
+        let view = FilterViewController(viewModel: vm)
+        return view
+    }
 }

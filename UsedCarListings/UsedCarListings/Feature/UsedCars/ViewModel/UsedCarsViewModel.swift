@@ -16,12 +16,35 @@ class UsedCarsViewModel {
     
     @Published var listings: [UsedCar]? = nil
     @Published var error: Error? = nil
+    @Published var filterType: FilterViewModel.FilterType? = nil
+    
+    var cancelSet: Set<AnyCancellable> = []
     var carImages: [String: UIImage] = [:]
     var downloadRequests: [String] = []
     
     init(service: UsedCarServiceProtocol, imageLoader: ImageLoader) {
         usedCarsService = service
         self.imageLoader = imageLoader
+        
+        NotificationCenter.default.publisher(for: .filterSelected)
+                    .compactMap{ $0.object as? FilterViewModel.FilterType }
+                    .sink() {
+                        [weak self] type in
+                        self?.filterType = type
+                        self?.performFiltering()
+                    }
+                    .store(in: &cancelSet)
+    }
+    
+    private func performFiltering() {
+        if let type = filterType {
+            switch type {
+            case .price:
+                self.listings = self.listings?.sorted { $0.listPrice < $1.listPrice }
+            case .mileage:
+                self.listings = self.listings?.sorted { $0.mileage < $1.mileage }
+            }
+        }
     }
     
     func fetchCars() {
@@ -51,5 +74,4 @@ class UsedCarsViewModel {
             downloadRequests.append(url)
         }
     }
-    
 }

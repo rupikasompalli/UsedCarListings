@@ -41,6 +41,7 @@ class UsedCarsViewController: UIViewController {
     private func createView() {
         self.view = usedCarsListView
         navigationItem.title = "Used Car Listings"
+        navigationItem.rightBarButtonItem = .init(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(settingsClicked))
     }
     
     private func fetchData() {
@@ -54,12 +55,23 @@ class UsedCarsViewController: UIViewController {
                 self?.refreshView()
             }
         .store(in: &cancellables)
+        
+        viewModel
+            .$filterType
+            .sink { [weak self] _ in
+                self?.refreshView()
+            }
+        .store(in: &cancellables)
     }
     
     private func refreshView() {
         DispatchQueue.main.async {
             self.usedCarsListView.reloadData()
         }
+    }
+    
+    @objc func settingsClicked() {
+        navigationController?.pushViewController(AppEnvironment.current.makeFilterListView(), animated: true)
     }
 }
 
@@ -88,5 +100,26 @@ extension UsedCarsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         350
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let filterType = viewModel.filterType {
+            let headerView = UIView(frame: .init(x: 20, y: 0, width: tableView.frame.size.width, height: 20))
+            let label = UILabel(frame: headerView.frame)
+            label.text = filterType.rawValue
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+            headerView.addSubview(label)
+            headerView.backgroundColor = .darkGray
+            return headerView
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if let filterType = viewModel.filterType {
+            return 20
+        }
+        return 0
     }
 }
