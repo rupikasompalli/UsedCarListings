@@ -16,7 +16,8 @@ class UsedCarsViewModel {
     
     @Published var listings: [UsedCar]? = nil
     @Published var error: Error? = nil
-    @Published var carImages: [String: UIImage] = [:]
+    var carImages: [String: UIImage] = [:]
+    var downloadRequests: [String] = []
     
     init(service: UsedCarServiceProtocol, imageLoader: ImageLoader) {
         usedCarsService = service
@@ -34,15 +35,20 @@ class UsedCarsViewModel {
         }
     }
     
-    func getCarImage(for car: UsedCar) {
+    func getCarImage(for car: UsedCar, completion: @escaping ((UIImage) -> Void)) {
         let url = car.images.large.first ?? ""
-        imageLoader.loadImage(from: url) { [weak self] result in
-            switch result {
-            case .success(let image):
-                self?.carImages[url] = image
-            case .failure(let error):
-                debugPrint("Error in downloadin image", error)
+        if !downloadRequests.contains(url) {
+            imageLoader.loadImage(from: url) { [weak self] result in
+                switch result {
+                case .success(let image):
+                    self?.carImages[url] = image
+                    self?.downloadRequests.removeAll { $0 == url }
+                    completion(image)
+                case .failure(let error):
+                    debugPrint("Error in downloadin image", error)
+                }
             }
+            downloadRequests.append(url)
         }
     }
     

@@ -9,6 +9,9 @@ import UIKit
 
 class UsedCarCell: UITableViewCell {
     
+    static let Identifier = "UsedCarCell"
+    
+    
     @IBOutlet weak var ymmLabel: UILabel!
     @IBOutlet weak var trimLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -25,7 +28,7 @@ class UsedCarCell: UITableViewCell {
     }
 
     func customizeView() {
-        
+        imageView?.contentMode = .scaleAspectFit
     }
     
     func showData(car: UsedCar) {
@@ -40,7 +43,12 @@ class UsedCarCell: UITableViewCell {
     
     func loadCarImage(image: UIImage) {
         DispatchQueue.main.async { [weak self] in
-            self?.carImageView.image = image
+            if image.size.width == 1 {
+                // No image found, load placeholder
+                self?.carImageView.image = UIImage(named: "placeholder-car")
+            } else {
+                self?.carImageView.image = image
+            }
         }
     }
 }

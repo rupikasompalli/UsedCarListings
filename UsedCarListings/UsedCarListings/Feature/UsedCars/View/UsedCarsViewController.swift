@@ -14,7 +14,8 @@ class UsedCarsViewController: UIViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "UsedCarCell", bundle: .main), forCellReuseIdentifier: "UsedCarCell")
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: UsedCarCell.Identifier, bundle: .main), forCellReuseIdentifier: UsedCarCell.Identifier)
         return tableView
     }()
     
@@ -32,7 +33,6 @@ class UsedCarsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         createView()
         bindView()
         fetchData()
@@ -40,6 +40,7 @@ class UsedCarsViewController: UIViewController {
     
     private func createView() {
         self.view = usedCarsListView
+        navigationItem.title = "Used Car Listings"
     }
     
     private func fetchData() {
@@ -53,23 +54,13 @@ class UsedCarsViewController: UIViewController {
                 self?.refreshView()
             }
         .store(in: &cancellables)
-        
-        viewModel
-            .$carImages
-            .sink { [weak self] _ in
-                self?.refreshView()
-            }
-        .store(in: &cancellables)
     }
     
     private func refreshView() {
         DispatchQueue.main.async {
             self.usedCarsListView.reloadData()
         }
-    
     }
-    
-    
 }
 
 extension UsedCarsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -78,7 +69,7 @@ extension UsedCarsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let carCell = tableView.dequeueReusableCell(withIdentifier: "UsedCarCell", for: indexPath) as? UsedCarCell
+        let carCell = tableView.dequeueReusableCell(withIdentifier: UsedCarCell.Identifier, for: indexPath) as? UsedCarCell
         guard let carCell = carCell,
               let car = viewModel.listings?[indexPath.row] else {
             return UITableViewCell()
@@ -87,13 +78,15 @@ extension UsedCarsViewController: UITableViewDelegate, UITableViewDataSource {
         if let carImage = viewModel.carImages[car.images.large.first ?? ""] {
             carCell.loadCarImage(image: carImage)
         } else {
-            viewModel.getCarImage(for: car)
+            viewModel.getCarImage(for: car) { image in
+                carCell.loadCarImage(image: image)
+            }
         }
         
         return carCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        320
+        350
     }
 }
