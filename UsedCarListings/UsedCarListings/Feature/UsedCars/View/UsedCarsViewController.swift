@@ -87,14 +87,13 @@ extension UsedCarsViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         carCell.showData(car: car)
-        if let carImage = viewModel.carImages[car.images.large.first ?? ""] {
+        if let carImage = viewModel.imageLoader.cache[car.images.large.first ?? ""] {
             carCell.loadCarImage(image: carImage)
         } else {
             viewModel.getCarImage(for: car) { image in
                 carCell.loadCarImage(image: image)
             }
         }
-        
         return carCell
     }
     

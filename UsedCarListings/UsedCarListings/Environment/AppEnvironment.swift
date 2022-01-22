@@ -20,7 +20,7 @@ struct AppEnvironment: Environment {
     static let current = AppEnvironment()
     
     var usedCarService: UsedCarServiceProtocol {
-        UsedCarServiceBackend()
+        return UsedCarServiceBackend()
     }
     
     var imageLoaderService: ImageLoader {

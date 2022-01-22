@@ -42,18 +42,18 @@ class FilterViewController: UIViewController {
 
 extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        FilterViewModel.FilterType.allCases.count
+        FilterType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath)
-        let filterType = FilterViewModel.FilterType.allCases[indexPath.row]
+        let filterType = FilterType.allCases[indexPath.row]
         cell.textLabel?.text = filterType.rawValue
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let filterType = FilterViewModel.FilterType.allCases[indexPath.row]
+        let filterType = FilterType.allCases[indexPath.row]
         NotificationCenter.default.post(name: .filterSelected, object: filterType)
         navigationController?.popViewController(animated: true)
     }

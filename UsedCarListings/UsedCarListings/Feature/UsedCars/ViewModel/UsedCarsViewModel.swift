@@ -14,20 +14,18 @@ class UsedCarsViewModel {
     let usedCarsService: UsedCarServiceProtocol
     let imageLoader: ImageLoader
     
-    @Published var listings: [UsedCar]? = nil
+    @Published var listings: [UsedCar]?
     @Published var error: Error? = nil
-    @Published var filterType: FilterViewModel.FilterType? = nil
+    @Published var filterType: FilterType?
     
     var cancelSet: Set<AnyCancellable> = []
-    var carImages: [String: UIImage] = [:]
-    var downloadRequests: [String] = []
     
     init(service: UsedCarServiceProtocol, imageLoader: ImageLoader) {
         usedCarsService = service
         self.imageLoader = imageLoader
         
         NotificationCenter.default.publisher(for: .filterSelected)
-                    .compactMap{ $0.object as? FilterViewModel.FilterType }
+                    .compactMap{ $0.object as? FilterType }
                     .sink() {
                         [weak self] type in
                         self?.filterType = type
@@ -60,18 +58,13 @@ class UsedCarsViewModel {
     
     func getCarImage(for car: UsedCar, completion: @escaping ((UIImage) -> Void)) {
         let url = car.images.large.first ?? ""
-        if !downloadRequests.contains(url) {
-            imageLoader.loadImage(from: url) { [weak self] result in
-                switch result {
-                case .success(let image):
-                    self?.carImages[url] = image
-                    self?.downloadRequests.removeAll { $0 == url }
-                    completion(image)
-                case .failure(let error):
-                    debugPrint("Error in downloadin image", error)
-                }
+        imageLoader.loadImage(from: url) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(let error):
+                debugPrint("Error in downloadin image", error)
             }
-            downloadRequests.append(url)
         }
     }
 }

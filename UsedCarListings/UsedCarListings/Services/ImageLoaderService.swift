@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol ImageLoader {
+    var cache: [String: UIImage] { get }
     func loadImage(from url: String, completion: @escaping ((Result<UIImage, Error>)-> Void))
     func saveImage(key: String, value: UIImage)
 }

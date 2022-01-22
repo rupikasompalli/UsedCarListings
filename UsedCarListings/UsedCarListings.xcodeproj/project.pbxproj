@@ -11,7 +11,6 @@
 		3720D5A5279B51FE00D6EAD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5A4279B51FE00D6EAD6 /* SceneDelegate.swift */; };
 		3720D5AC279B51FF00D6EAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5AB279B51FF00D6EAD6 /* Assets.xcassets */; };
 		3720D5AF279B51FF00D6EAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3720D5AD279B51FF00D6EAD6 /* LaunchScreen.storyboard */; };
-		3720D5BA279B520000D6EAD6 /* UsedCarListingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5B9279B520000D6EAD6 /* UsedCarListingsTests.swift */; };
 		3720D5C4279B520000D6EAD6 /* UsedCarListingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5C3279B520000D6EAD6 /* UsedCarListingsUITests.swift */; };
 		3720D5C6279B520000D6EAD6 /* UsedCarListingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5C5279B520000D6EAD6 /* UsedCarListingsUITestsLaunchTests.swift */; };
 		3720D5D4279B539D00D6EAD6 /* UsedCarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5D3279B539D00D6EAD6 /* UsedCarService.swift */; };
@@ -30,6 +29,12 @@
 		3720D5F9279BB38F00D6EAD6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5F8279BB38F00D6EAD6 /* FilterViewController.swift */; };
 		3720D5FB279BB3A000D6EAD6 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5FA279BB3A000D6EAD6 /* FilterViewModel.swift */; };
 		3720D5FD279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D5FC279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift */; };
+		3720D605279C5DBD00D6EAD6 /* UsedCars.json in Resources */ = {isa = PBXBuildFile; fileRef = 3720D604279C5DBD00D6EAD6 /* UsedCars.json */; };
+		3720D607279C5DFD00D6EAD6 /* UsedCarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D606279C5DFD00D6EAD6 /* UsedCarsViewModelTests.swift */; };
+		3720D609279C5E0C00D6EAD6 /* FilterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D608279C5E0C00D6EAD6 /* FilterViewModelTests.swift */; };
+		3720D60D279C5E6D00D6EAD6 /* UsedCarServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D60C279C5E6D00D6EAD6 /* UsedCarServiceMock.swift */; };
+		3720D60F279C60F400D6EAD6 /* ImageLoaderServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D60E279C60F400D6EAD6 /* ImageLoaderServiceMock.swift */; };
+		3720D612279C6BF500D6EAD6 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720D611279C6BF500D6EAD6 /* FilterType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +62,6 @@
 		3720D5AE279B51FF00D6EAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3720D5B0279B51FF00D6EAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3720D5B5279B520000D6EAD6 /* UsedCarListingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsedCarListingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3720D5B9279B520000D6EAD6 /* UsedCarListingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarListingsTests.swift; sourceTree = "<group>"; };
 		3720D5BF279B520000D6EAD6 /* UsedCarListingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsedCarListingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3720D5C3279B520000D6EAD6 /* UsedCarListingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarListingsUITests.swift; sourceTree = "<group>"; };
 		3720D5C5279B520000D6EAD6 /* UsedCarListingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarListingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -77,6 +81,12 @@
 		3720D5F8279BB38F00D6EAD6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3720D5FA279BB3A000D6EAD6 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		3720D5FC279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
+		3720D604279C5DBD00D6EAD6 /* UsedCars.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UsedCars.json; sourceTree = "<group>"; };
+		3720D606279C5DFD00D6EAD6 /* UsedCarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarsViewModelTests.swift; sourceTree = "<group>"; };
+		3720D608279C5E0C00D6EAD6 /* FilterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModelTests.swift; sourceTree = "<group>"; };
+		3720D60C279C5E6D00D6EAD6 /* UsedCarServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedCarServiceMock.swift; sourceTree = "<group>"; };
+		3720D60E279C60F400D6EAD6 /* ImageLoaderServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderServiceMock.swift; sourceTree = "<group>"; };
+		3720D611279C6BF500D6EAD6 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,10 +137,10 @@
 		3720D5A1279B51FE00D6EAD6 /* UsedCarListings */ = {
 			isa = PBXGroup;
 			children = (
+				3720D603279C5DA800D6EAD6 /* Mocks */,
 				3720D5E2279B661D00D6EAD6 /* Environment */,
 				3720D5F4279BB0E600D6EAD6 /* Extensions */,
 				3720D5E3279B679E00D6EAD6 /* Feature */,
-				3720D5D5279B53C100D6EAD6 /* Models */,
 				3720D5D2279B537700D6EAD6 /* Services */,
 				3720D600279BBC8200D6EAD6 /* Delegates */,
 				3720D602279BBC9E00D6EAD6 /* Resources */,
@@ -141,7 +151,8 @@
 		3720D5B8279B520000D6EAD6 /* UsedCarListingsTests */ = {
 			isa = PBXGroup;
 			children = (
-				3720D5B9279B520000D6EAD6 /* UsedCarListingsTests.swift */,
+				3720D606279C5DFD00D6EAD6 /* UsedCarsViewModelTests.swift */,
+				3720D608279C5E0C00D6EAD6 /* FilterViewModelTests.swift */,
 			);
 			path = UsedCarListingsTests;
 			sourceTree = "<group>";
@@ -167,10 +178,10 @@
 		3720D5D5279B53C100D6EAD6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3720D5DC279B5EA900D6EAD6 /* UsedCarListings.swift */,
 				3720D5D6279B53D500D6EAD6 /* UsedCar.swift */,
 				3720D5D8279B588200D6EAD6 /* UsedCarImages.swift */,
 				3720D5DA279B589A00D6EAD6 /* Dealer.swift */,
-				3720D5DC279B5EA900D6EAD6 /* UsedCarListings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 		3720D5E4279B67A900D6EAD6 /* UsedCars */ = {
 			isa = PBXGroup;
 			children = (
+				3720D5D5279B53C100D6EAD6 /* Models */,
 				3720D5EB279B682C00D6EAD6 /* View */,
 				3720D5EC279B683500D6EAD6 /* ViewModel */,
 			);
@@ -240,6 +252,7 @@
 		3720D5F7279BB36F00D6EAD6 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3720D610279C6BEB00D6EAD6 /* Model */,
 				3720D5FE279BBC3000D6EAD6 /* View */,
 				3720D5FF279BBC3700D6EAD6 /* ViewModel */,
 			);
@@ -279,6 +292,40 @@
 				3720D5B0279B51FF00D6EAD6 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3720D603279C5DA800D6EAD6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3720D60B279C5E5C00D6EAD6 /* Services */,
+				3720D60A279C5E3500D6EAD6 /* JSON */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3720D60A279C5E3500D6EAD6 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				3720D604279C5DBD00D6EAD6 /* UsedCars.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		3720D60B279C5E5C00D6EAD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3720D60C279C5E6D00D6EAD6 /* UsedCarServiceMock.swift */,
+				3720D60E279C60F400D6EAD6 /* ImageLoaderServiceMock.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3720D610279C6BEB00D6EAD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3720D611279C6BF500D6EAD6 /* FilterType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +435,7 @@
 				3720D5AF279B51FF00D6EAD6 /* LaunchScreen.storyboard in Resources */,
 				3720D5AC279B51FF00D6EAD6 /* Assets.xcassets in Resources */,
 				3720D5F0279B685B00D6EAD6 /* UsedCarCell.xib in Resources */,
+				3720D605279C5DBD00D6EAD6 /* UsedCars.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,10 +473,13 @@
 				3720D5F9279BB38F00D6EAD6 /* FilterViewController.swift in Sources */,
 				3720D5E1279B661800D6EAD6 /* AppEnvironment.swift in Sources */,
 				3720D5DD279B5EA900D6EAD6 /* UsedCarListings.swift in Sources */,
+				3720D60F279C60F400D6EAD6 /* ImageLoaderServiceMock.swift in Sources */,
 				3720D5D9279B588200D6EAD6 /* UsedCarImages.swift in Sources */,
+				3720D612279C6BF500D6EAD6 /* FilterType.swift in Sources */,
 				3720D5D4279B539D00D6EAD6 /* UsedCarService.swift in Sources */,
 				3720D5D7279B53D500D6EAD6 /* UsedCar.swift in Sources */,
 				3720D5FD279BB6BA00D6EAD6 /* NSNotification.Name+Extension.swift in Sources */,
+				3720D60D279C5E6D00D6EAD6 /* UsedCarServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +487,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3720D5BA279B520000D6EAD6 /* UsedCarListingsTests.swift in Sources */,
+				3720D607279C5DFD00D6EAD6 /* UsedCarsViewModelTests.swift in Sources */,
+				3720D609279C5E0C00D6EAD6 /* FilterViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +653,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UU62C6D89D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UsedCarListings/Info.plist;
+				INFOPLIST_FILE = UsedCarListings/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -628,7 +680,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UU62C6D89D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UsedCarListings/Info.plist;
+				INFOPLIST_FILE = UsedCarListings/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

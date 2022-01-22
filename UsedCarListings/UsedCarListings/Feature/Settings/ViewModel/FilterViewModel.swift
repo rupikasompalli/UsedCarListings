@@ -8,8 +8,5 @@
 import Foundation
 
 class FilterViewModel {
-    enum FilterType: String, CaseIterable {
-        case price = "Filter By Price"
-        case mileage = "Filter By Mileage"
-    }
+    
 }
